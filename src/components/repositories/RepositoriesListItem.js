@@ -1,3 +1,4 @@
+import { MarkGithubIcon } from "@primer/octicons-react";
 import { Link } from "react-router-dom";
 import FileIcon from "../tree/FileIcon";
 import RepositoriesSummary from "./RepositoriesSummary";
@@ -23,14 +24,16 @@ function RepositoriesListItem({ repository }) {
         <RepositoriesSummary repository={repository} />
       </div>
 
-      {/* <a
-        href={html_url}
-        target='_blank'
-        rel='noopener noreferrer'
-        className='ml-auto text-blue-600 hover:underline'
-      >
-        View on GitHub
-      </a> */}
+      <div className='grow flex items-center justify-end pr-2'>
+        <a
+          href={html_url}
+          aria-label='gitHub repository'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <MarkGithubIcon size={24} />
+        </a>
+      </div>
     </div>
   );
 }
